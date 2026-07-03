@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>box game</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+    </head>
+    <div class="game">
+          <h1>BOX GAME</h1>
+          <ul>
+            <li>Click Start to begin the game.</li>
+            <li>One box turns green at a time.</li>
+            <li>Click the green box before it changes.</li>
+            <li>Each correct click earns 1 point.</li>
+            <li>The green box changes position every 1 second.</li>
+           <li>The game ends when the timer runs out.</li>
+          </ul>
+    </div>
+    <div class="card">
+    <button id="start">START</button>
+    <p>Score: <span id="score">0</span></p>
+    </div>
+    <div class="box" id="box"> 
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        <div id="box4"></div>
+        <div id="box5"></div>
+        <div id="box6"></div>
+        <div id="box7"></div>
+        <div id="box8"></div>
+        <div id="box9"></div>
+    </div>
+    <div class="modal" id="modal1">
+    <p>you lose</p>
+    </div>
+
+</body>
+</html>
