@@ -1,0 +1,73 @@
+*{ box-sizing:border-box;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:greenyellow;
+}
+
+.game{
+  width:400px;
+  height:auto;
+  border:2px solid black;
+  display:flex;
+  flex-direction: column;
+  background:#000000;
+  color:white;
+  text-align:center;
+}
+
+.game h1{
+  color:greenyellow;
+  text-shadow:2px 2px 5px #e0e0e0;
+}
+
+.game li{
+  list-style:none;
+  text-align:start;
+}
+
+
+
+.box{
+  width:300px;
+  height:auto;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+  border:2px solid black;
+  padding: 20px;
+  box-shadow: 2px -3px 5px rgb(0, 0, 0);
+  background: black;
+}
+
+#box1 , #box2 , #box3 , #box4 , 
+#box5 , #box6 , #box7 , #box8 ,
+#box9 {
+  width:50px;
+  height:50px;
+  border:2px solid black;
+  border-radius: 50px;
+  background: rgb(255, 255, 255);
+}
+
+#start{
+  width:100px;
+  height:50px;
+  border:2px solid black;
+  background: red;
+  box-shadow: 2px 2px 5px rgb(92, 92, 92);
+  border-radius: 20px;
+  margin:20px;
+  font-weight:800;
+}
+
+.card{
+  display: flex;
+}
+p{
+  font-weight: 800;
+  font-size: 30px;
+}
