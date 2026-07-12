@@ -1,37 +1,62 @@
 $(document).ready(function () {
 
     let score = 0;
-    let game;
+    let currentBox = "";
+    let gameRunning = false;
+    let timer;
+
+    function showGreenBox() {
+
+        // Make all boxes white
+        $("#box div").css("background-color", "white");
+
+        // Select random box
+        let random = Math.floor(Math.random() * 9) + 1;
+
+        currentBox = "box" + random;
+
+        $("#" + currentBox).css("background-color", "green");
+    }
 
     $("#start").click(function () {
 
-        clearInterval(game); // Prevent multiple intervals
+        if (gameRunning) return;
 
-        game = setInterval(function () {
+        gameRunning = true;
 
-            // Make all boxes white
+        score = 0;
+        $("#score").text(score);
+
+        $(this).prop("disabled", true);
+
+        showGreenBox();
+
+        // Stop game after 30 seconds
+        timer = setTimeout(function () {
+
+            gameRunning = false;
+
             $("#box div").css("background-color", "white");
 
-            // Select random box
-            let randomBox = Math.floor(Math.random() * 9) + 1;
+            $("#start").prop("disabled", false);
 
-            // Make one box green
-            $("#box" + randomBox).css("background-color", "green");
+            alert("🎉 Game Over!\n\nYour Score: " + score);
 
-        }, 1000);
+        }, 30000);
 
     });
 
     $("#box div").click(function () {
 
-        // Check ONLY the clicked box
-        if ($(this).css("background-color") == "rgb(0, 128, 0)") {
+        if (!gameRunning) return;
+
+        if ($(this).attr("id") === currentBox) {
 
             score++;
             $("#score").text(score);
 
-            // Prevent multiple scoring from the same green box
-            $(this).css("background-color", "white");
+            // Immediately show another green box
+            showGreenBox();
 
         } else {
 
