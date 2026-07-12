@@ -1,45 +1,45 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Outfit',sans-serif;
 }
 
 body{
     min-height:100vh;
+    background:#f6f5f2;
+    background-image:
+    radial-gradient(circle at top left,#ffe4b5 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#d8f3dc 0%,transparent 25%);
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:30px;
-    background:linear-gradient(135deg,#141E30,#243B55);
-    padding:30px;
+    padding:40px 20px;
+    color:#222;
 }
 
-/* ---------- Game Info ---------- */
+/* ---------------- GAME INFO ---------------- */
 
 .game{
     width:100%;
-    max-width:750px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:20px;
-    padding:30px;
-    color:white;
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    max-width:760px;
+    background:#fff;
+    border-radius:25px;
+    padding:35px;
+    margin-bottom:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    border:2px solid #ececec;
 }
 
 .game h1{
+    font-size:48px;
     text-align:center;
-    margin-bottom:20px;
-    font-size:2.5rem;
-    letter-spacing:3px;
-    color:#00ffb3;
-    text-shadow:0 0 15px rgba(0,255,179,.5);
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:25px;
 }
 
 .game ul{
@@ -48,170 +48,228 @@ body{
 
 .game li{
     margin:12px 0;
+    color:#555;
+    font-size:17px;
     line-height:1.6;
-    font-size:16px;
 }
 
-/* ---------- Score Card ---------- */
+/* ---------------- SCORE CARD ---------------- */
 
 .card{
-    width:320px;
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
-    padding:18px 25px;
-    border-radius:18px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    gap:40px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
 }
-
-.card p{
-    color:white;
-    font-size:22px;
-    font-weight:600;
-}
-
-#score{
-    color:#00ff88;
-}
-
-/* ---------- Button ---------- */
 
 #start{
-    padding:12px 28px;
+    padding:15px 42px;
     border:none;
-    border-radius:50px;
-    background:linear-gradient(135deg,#00d2ff,#3a7bd5);
-    color:white;
-    font-size:16px;
+    background:#111;
+    color:#fff;
+    font-size:17px;
     font-weight:600;
+    border-radius:15px;
     cursor:pointer;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(58,123,213,.4);
+    transition:.25s;
 }
 
 #start:hover{
     transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(58,123,213,.55);
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
 }
 
 #start:active{
     transform:scale(.96);
 }
 
-/* ---------- Game Board ---------- */
+.card p{
+    font-size:22px;
+    font-weight:600;
+}
+
+#score{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:50px;
+    height:50px;
+    margin-left:10px;
+    background:#34c759;
+    color:#fff;
+    border-radius:50%;
+    font-size:24px;
+    font-weight:700;
+}
+
+/* ---------------- GAME BOARD ---------------- */
 
 .box{
     display:grid;
     grid-template-columns:repeat(3,120px);
-    gap:20px;
-    background:rgba(255,255,255,.08);
-    padding:25px;
-    border-radius:20px;
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    gap:18px;
+    background:#fff;
+    padding:28px;
+    border-radius:24px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
 
-/* ---------- Individual Boxes ---------- */
+/* ---------------- BOXES ---------------- */
 
 .box div{
     width:120px;
     height:120px;
-    background:#2b2b2b;
-    border-radius:18px;
+    background:#ececec;
+    border-radius:20px;
     cursor:pointer;
     transition:.25s ease;
-    box-shadow:
-    inset 0 2px 8px rgba(255,255,255,.08),
-    0 8px 20px rgba(0,0,0,.3);
 }
+
+/* Individual rotation for natural look */
+
+#box1{transform:rotate(-2deg);}
+#box2{transform:rotate(1deg);}
+#box3{transform:rotate(-1deg);}
+#box4{transform:rotate(2deg);}
+#box5{transform:rotate(0deg);}
+#box6{transform:rotate(-2deg);}
+#box7{transform:rotate(2deg);}
+#box8{transform:rotate(-1deg);}
+#box9{transform:rotate(1deg);}
 
 .box div:hover{
-    transform:scale(1.08);
+    transform:translateY(-6px) scale(1.04);
+    background:#dfdfdf;
 }
 
-/* ---------- Active Box ---------- */
-/* Your jQuery changes background-color to green.
-   This makes it glow automatically. */
+/* Green tile styling */
 
 .box div[style*="green"]{
-    background:#00ff66 !important;
-    box-shadow:
-    0 0 15px #00ff66,
-    0 0 35px #00ff66,
-    0 0 60px rgba(0,255,102,.8);
-    animation:pulse .8s infinite;
-}
 
-/* ---------- Animation ---------- */
+    background:#34c759 !important;
 
-@keyframes pulse{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.08);
-    }
-
-    100%{
-        transform:scale(1);
-    }
+    animation:pop .35s ease;
 
 }
 
-/* ---------- Responsive ---------- */
+/* ---------------- ANIMATION ---------------- */
+
+@keyframes pop{
+
+0%{
+transform:scale(.85);
+}
+
+60%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* ---------------- RESPONSIVE ---------------- */
 
 @media(max-width:768px){
 
-    .game{
-        padding:20px;
-    }
+.game{
 
-    .game h1{
-        font-size:2rem;
-    }
+padding:25px;
 
-    .box{
-        grid-template-columns:repeat(3,90px);
-        gap:15px;
-    }
+}
 
-    .box div{
-        width:90px;
-        height:90px;
-    }
+.game h1{
 
-    .card{
-        width:100%;
-        max-width:350px;
-    }
+font-size:36px;
+
+}
+
+.box{
+
+grid-template-columns:repeat(3,95px);
+
+gap:15px;
+
+padding:20px;
+
+}
+
+.box div{
+
+width:95px;
+
+height:95px;
+
+}
+
+.card{
+
+gap:20px;
+
+}
 
 }
 
 @media(max-width:480px){
 
-    .box{
-        grid-template-columns:repeat(3,75px);
-        gap:12px;
-    }
+body{
 
-    .box div{
-        width:75px;
-        height:75px;
-    }
+padding:25px 15px;
 
-    .game h1{
-        font-size:1.7rem;
-    }
+}
 
-    .card{
-        flex-direction:column;
-        gap:15px;
-    }
+.game{
+
+padding:20px;
+
+}
+
+.game h1{
+
+font-size:30px;
+
+}
+
+.game li{
+
+font-size:15px;
+
+}
+
+.box{
+
+grid-template-columns:repeat(3,75px);
+
+gap:12px;
+
+padding:15px;
+
+}
+
+.box div{
+
+width:75px;
+
+height:75px;
+
+border-radius:14px;
+
+}
+
+.card{
+
+flex-direction:column;
+
+}
+
+#start{
+
+width:100%;
+
+}
 
 }
