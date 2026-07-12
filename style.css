@@ -1,275 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Outfit',sans-serif;
+    font-family:'Fredoka',sans-serif;
 }
 
 body{
-    min-height:100vh;
-    background:#f6f5f2;
-    background-image:
-    radial-gradient(circle at top left,#ffe4b5 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#d8f3dc 0%,transparent 25%);
+
+    background:#ffeaf4;
+
     display:flex;
+
     flex-direction:column;
-    align-items:center;
+
     justify-content:center;
-    padding:40px 20px;
-    color:#222;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:30px;
+
 }
 
-/* ---------------- GAME INFO ---------------- */
+h1{
+
+    color:#ff4d88;
+
+    font-size:55px;
+
+    text-shadow:3px 3px #fff;
+
+    margin-bottom:20px;
+
+}
 
 .game{
-    width:100%;
-    max-width:760px;
-    background:#fff;
-    border-radius:25px;
-    padding:35px;
-    margin-bottom:30px;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    border:2px solid #ececec;
-}
 
-.game h1{
-    font-size:48px;
-    text-align:center;
-    font-weight:800;
-    letter-spacing:2px;
-    margin-bottom:25px;
+    background:white;
+
+    width:700px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    margin-bottom:30px;
+
 }
 
 .game ul{
-    padding-left:20px;
-}
 
-.game li{
-    margin:12px 0;
+    margin-left:20px;
+
     color:#555;
-    font-size:17px;
-    line-height:1.6;
-}
 
-/* ---------------- SCORE CARD ---------------- */
+    line-height:2;
+
+}
 
 .card{
+
     display:flex;
-    justify-content:center;
+
     align-items:center;
+
     gap:40px;
-    margin-bottom:35px;
-    flex-wrap:wrap;
+
+    margin-bottom:30px;
+
 }
 
 #start{
-    padding:15px 42px;
+
+    padding:14px 40px;
+
     border:none;
-    background:#111;
-    color:#fff;
-    font-size:17px;
-    font-weight:600;
-    border-radius:15px;
+
+    border-radius:40px;
+
+    background:linear-gradient(45deg,#ff6ea8,#ffb347);
+
+    color:white;
+
+    font-size:18px;
+
     cursor:pointer;
-    transition:.25s;
+
+    transition:.3s;
+
 }
 
 #start:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(0,0,0,.18);
-}
 
-#start:active{
-    transform:scale(.96);
+    transform:scale(1.08);
+
 }
 
 .card p{
-    font-size:22px;
-    font-weight:600;
+
+    font-size:24px;
+
+    color:#444;
+
 }
 
 #score{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    width:50px;
-    height:50px;
-    margin-left:10px;
-    background:#34c759;
-    color:#fff;
-    border-radius:50%;
-    font-size:24px;
-    font-weight:700;
-}
 
-/* ---------------- GAME BOARD ---------------- */
+    color:#ff4d88;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
 
 .box{
-    display:grid;
-    grid-template-columns:repeat(3,120px);
-    gap:18px;
-    background:#fff;
-    padding:28px;
-    border-radius:24px;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
 
-/* ---------------- BOXES ---------------- */
+    display:grid;
+
+    grid-template-columns:repeat(3,110px);
+
+    gap:18px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
 
 .box div{
-    width:120px;
-    height:120px;
-    background:#ececec;
-    border-radius:20px;
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:22px;
+
     cursor:pointer;
-    transition:.25s ease;
+
+    transition:.25s;
+
 }
 
-/* Individual rotation for natural look */
+/* Different candy colours */
 
-#box1{transform:rotate(-2deg);}
-#box2{transform:rotate(1deg);}
-#box3{transform:rotate(-1deg);}
-#box4{transform:rotate(2deg);}
-#box5{transform:rotate(0deg);}
-#box6{transform:rotate(-2deg);}
-#box7{transform:rotate(2deg);}
-#box8{transform:rotate(-1deg);}
-#box9{transform:rotate(1deg);}
+#box1{background:#ff8fab;}
+#box2{background:#ffd166;}
+#box3{background:#90e0ef;}
+#box4{background:#c77dff;}
+#box5{background:#ffb703;}
+#box6{background:#80ed99;}
+#box7{background:#ff99c8;}
+#box8{background:#a0c4ff;}
+#box9{background:#ffc6ff;}
 
 .box div:hover{
-    transform:translateY(-6px) scale(1.04);
-    background:#dfdfdf;
+
+    transform:translateY(-5px) rotate(3deg);
+
 }
-
-/* Green tile styling */
-
 .box div[style*="green"]{
 
-    background:#34c759 !important;
+    background:#38d430 !important;
 
-    animation:pop .35s ease;
-
-}
-
-/* ---------------- ANIMATION ---------------- */
-
-@keyframes pop{
-
-0%{
-transform:scale(.85);
-}
-
-60%{
-transform:scale(1.08);
-}
-
-100%{
-transform:scale(1);
-}
+    animation:bounce .4s infinite alternate;
 
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+@keyframes bounce{
 
-@media(max-width:768px){
+    from{
 
-.game{
+        transform:scale(1);
 
-padding:25px;
+    }
 
-}
+    to{
 
-.game h1{
+        transform:scale(1.08);
 
-font-size:36px;
-
-}
-
-.box{
-
-grid-template-columns:repeat(3,95px);
-
-gap:15px;
-
-padding:20px;
-
-}
-
-.box div{
-
-width:95px;
-
-height:95px;
-
-}
-
-.card{
-
-gap:20px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-body{
-
-padding:25px 15px;
-
-}
-
-.game{
-
-padding:20px;
-
-}
-
-.game h1{
-
-font-size:30px;
-
-}
-
-.game li{
-
-font-size:15px;
-
-}
-
-.box{
-
-grid-template-columns:repeat(3,75px);
-
-gap:12px;
-
-padding:15px;
-
-}
-
-.box div{
-
-width:75px;
-
-height:75px;
-
-border-radius:14px;
-
-}
-
-.card{
-
-flex-direction:column;
-
-}
-
-#start{
-
-width:100%;
-
-}
+    }
 
 }
